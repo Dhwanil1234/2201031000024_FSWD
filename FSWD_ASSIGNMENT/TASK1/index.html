@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            },
+            plugins: [daisyui],
+        };
+    </script>
+</head>
+<body class="bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-blue-500 text-white p-6 flex justify-between items-center shadow-lg w-full">
+        <h1 class="text-3xl font-bold">My Portfolio</h1>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="hover:text-yellow-300">About</a></li>
+                <li><a href="#expertise" class="hover:text-yellow-300">Expertised Languages</a></li>
+                <li><a href="#projects" class="hover:text-yellow-300">Projects</a></li>
+                <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-center py-20 bg-gradient-to-r from-slate-400 to-slate-500 text-white w-full">
+        
+        <h2 class="text-5xl font-extrabold">Hello, I'm <b style="color: red;">Dhwanil Patel</b></h2>
+        <p class="mt-4 text-xl">A Backend Web Developer</p>
+        <a href="#contact" class="mt-4 inline-block bg-yellow-500 text-white px-6 py-2 rounded-full hover:bg-yellow-600">Hire Me</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="w-full py-20 px-6 text-center bg-slate-500 text-white rounded-lg shadow-lg">
+        <h2 class="text-4xl font-bold">About Me</h2>
+        <p class="mt-6 text-lg">I am a backend web developer specializing in Python, Java, and React.js, focusing on building modern, responsive, and interactive applications.</p>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="w-full py-20 px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800">Expertised Languages</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-2xl font-semibold">Python</h3>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-2xl font-semibold">Java</h3>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-2xl font-semibold">React.js</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="w-full py-20 px-6 text-center">
+        <h2 class="text-4xl font-bold text-gray-800">Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
+            <div class="card bg-gray-600 text-white shadow-xl p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold">Project 1</h3>
+                <p class="mt-2">A brief description of the project.</p>
+                <a href="#" class="btn btn-accent mt-4">View Project</a>
+            </div>
+            <div class="card bg-gray-700 text-white shadow-xl p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold">Project 2</h3>
+                <p class="mt-2">A brief description of the project.</p>
+                <a href="#" class="btn btn-accent mt-4">View Project</a>
+            </div>
+            <div class="card bg-gray-600 text-white shadow-xl p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold">Project 3</h3>
+                <p class="mt-2">A brief description of the project.</p>
+                <a href="#" class="btn btn-accent mt-4">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="w-full py-20 px-6 text-center bg-slate-600 text-white rounded-lg shadow-lg">
+        <h2 class="text-4xl font-bold">Contact Me</h2>
+        <p class="mt-6 text-lg">Feel free to reach out for collaborations or inquiries.</p>
+        <a href="mailto:pateldhwanil732@gmail.com" class="btn btn-warning mt-4"></a>
+        <a href="mailto:pateldhwanil732@gmail.com" class="mt-4 inline-block bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600">Email Me</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-6 mt-12 w-full">
+        <p class="text-lg">&copy; 2025 Dhwanil Patel. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

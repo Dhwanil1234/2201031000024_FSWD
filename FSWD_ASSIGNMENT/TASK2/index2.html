@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom transition for sidebar */
+        .sidebar-transition {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-gray-800 text-white transform -translate-x-full md:translate-x-0 sidebar-transition z-30">
+        <div class="p-4 text-center">
+            <h2 class="text-2xl font-bold">Admin Dashboard</h2>
+        </div>
+        <nav class="mt-6">
+            <ul>
+                <!-- Home Menu -->
+                <li class="px-6 py-3 hover:bg-gray-700 rounded-md transition duration-300">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleSubmenu('home-submenu')">
+                        <span>Home</span>
+                        <span>&#9662;</span>
+                    </div>
+                    <ul id="home-submenu" class="ml-4 mt-2 hidden space-y-2">
+                        <li class="hover:text-gray-300"><a href="#">Dashboard</a></li>
+                        <li class="hover:text-gray-300"><a href="#">Profile</a></li>
+                    </ul>
+                </li>
+
+                <!-- Analytics Menu -->
+                <li class="px-6 py-3 hover:bg-gray-700 rounded-md transition duration-300">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleSubmenu('analytics-submenu')">
+                        <span>Analytics</span>
+                        <span>&#9662;</span>
+                    </div>
+                    <ul id="analytics-submenu" class="ml-4 mt-2 hidden space-y-2">
+                        <li class="hover:text-gray-300"><a href="#">Overview</a></li>
+                        <li class="hover:text-gray-300"><a href="#">Reports</a></li>
+                    </ul>
+                </li>
+
+                <!-- Users Menu -->
+                <li class="px-6 py-3 hover:bg-gray-700 rounded-md transition duration-300">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleSubmenu('users-submenu')">
+                        <span>Users</span>
+                        <span>&#9662;</span>
+                    </div>
+                    <ul id="users-submenu" class="ml-4 mt-2 hidden space-y-2">
+                        <li class="hover:text-gray-300"><a href="#">Manage Users</a></li>
+                        <li class="hover:text-gray-300"><a href="#">User Roles</a></li>
+                    </ul>
+                </li>
+
+                <!-- Settings Menu -->
+                <li class="px-6 py-3 hover:bg-gray-700 rounded-md transition duration-300">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleSubmenu('settings-submenu')">
+                        <span>Settings</span>
+                        <span>&#9662;</span>
+                    </div>
+                    <ul id="settings-submenu" class="ml-4 mt-2 hidden space-y-2">
+                        <li class="hover:text-gray-300"><a href="#">General</a></li>
+                        <li class="hover:text-gray-300"><a href="#">Security</a></li>
+                    </ul>
+                </li>
+
+                <!-- Logout -->
+                <li class="px-6 py-3 hover:bg-gray-700 rounded-md transition duration-300">
+                    <a href="#">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="md:pl-64 flex flex-col min-h-screen transition-all duration-300">
+
+        <!-- Navbar -->
+        <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+            <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                &#9776;
+            </button>
+            <h1 class="text-xl font-semibold">Dashboard Overview</h1>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search..." class="border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-300">
+                
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="p-6 flex-1">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="bg-blue-600 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 text-white">
+                    <div class="flex items-center">
+                        <div class="text-4xl mr-4">
+                            &#128100;
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold">Total Users</h2>
+                            <p class="text-3xl font-bold">32,500</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-green-600 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 text-white">
+                    <div class="flex items-center">
+                        <div class="text-4xl mr-4">
+                            &#128176;
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold">Revenue</h2>
+                            <p class="text-3xl font-bold">$386,000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-red-600 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 text-white">
+                    <div class="flex items-center">
+                        <div class="text-4xl mr-4">
+                            &#128722;
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold">New Orders</h2>
+                            <p class="text-3xl font-bold">2100</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-yellow-600 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 text-white">
+                    <div class="flex items-center">
+                        <div class="text-4xl mr-4">
+                            &#128202;
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold">Analytics</h2>
+                            <p class="text-3xl font-bold">19,245</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+
+        function toggleSubmenu(id) {
+            const submenu = document.getElementById(id);
+            submenu.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
